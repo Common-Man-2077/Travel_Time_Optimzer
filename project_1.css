@@ -1,0 +1,43 @@
+/* Define the height of the map to leave space at the bottom for chart */
+#map {
+  height: 75%;
+}
+
+/* Define the size of body */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Define the location and style of the "Travel Time Chart" floating panel*/
+.pac-card {
+  width: 250px;
+  margin: 10px 10px 0 0;
+  border-radius: 2px 0 0 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  font-family: Roboto;
+}
+
+#pac-container {
+  padding-bottom: 12px;
+  margin-right: 12px;
+}
+
+#title {
+  color: #fff;
+  background-color: #4d90fe;
+  font-size: 25px;
+  font-weight: 500;
+  padding: 6px 12px;
+}
+
+/* Define the text size for the explanning text at the bottom */
+p {
+  font-size: 30px;
+}

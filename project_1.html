@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Commuting Time Optimizer</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <!-- Import Google Maps API Library -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY_HERE&callback=initMap&libraries=places&v=weekly"
+      defer
+    ></script>
+    <!-- Import Time Picker Library -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <!-- Import jQuery Library -->
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+    <!-- Import CSS files for this Html file -->
+    <link rel="stylesheet" type="text/css" href="project_1.css" />
+    <!-- Import Google Chart Library -->
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+  </head>
+  <body>
+    <!-- This is for "Travel Time Chart" Floating Panel -->
+    <div class="pac-card" id="pac-card">
+      <div>
+        <div id="title">Travel Time Chart</div>
+      </div>
+      <div id="pac-container">
+        <input
+          id="pac-origin"
+          type="text"
+          placeholder="Enter Your Start Location"
+          style="width: 215px"
+        />
+      </div>
+      <div id="pac-container">
+        <input
+          id="pac-destination"
+          type="text"
+          placeholder="Enter Your End Location"
+          style="width: 215px"
+        />
+      </div>
+      <div>Earliest Time to Depart</div>
+      <input
+        id="flatpickr1"
+        placeholder="Select Earliest Depature Time"
+        style="width: 215px"
+      />
+      <script>
+        flatpickr("#flatpickr1", {
+          enableTime: true,
+          dateFormat: "Y-m-d H:i",
+        });
+      </script>
+      <script>
+        flatpickr("#flatpickr2", {
+          enableTime: true,
+          dateFormat: "Y-m-d H:i",
+        });
+      </script>
+      <br />
+      <br />
+      <button type="button" id="route">Visualize Travel Time</button>
+      <button onClick="window.location.reload();" id="reset">Reset</button>
+    </div>
+    <!-- This is for Google Map Element -->
+    <div id="map"></div>
+    <!-- This is for Google Chart Element -->
+    <div id="chart_div">
+      <p id="status">
+        Please Enter your Starting Point and Destination at top right corner and
+        hit "Visualize Travel Time" Button. <br />
+        <br />This will show the chart of commute time vs depature time after it
+        collects all related data from Google Maps API.
+      </p>
+    </div>
+    <!-- This is to import javascript to load Google Maps and its route data -->
+    <script src="project_1.js"></script>
+  </body>
+</html>
